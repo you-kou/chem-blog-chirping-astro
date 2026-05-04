@@ -1,6 +1,8 @@
+<!-- markdownlint-disable-file -->
+
 # Agents.md — Chirping Astro
 
-> Agentic development guide for the `kannansuresh/chirping-astro` repository.  
+> Agentic development guide for the `kannansuresh/chirping-astro` repository.
 > This file documents project conventions, architecture, key files, and
 > task-specific guidance for AI agents working on this codebase.
 
@@ -192,7 +194,7 @@ src/content/posts/en/my-post.md      → /en/posts/my-post    ← now prefixed
 
 ### The No-Prefix Invariant
 
-> **The default locale always occupies the URL root — never a prefixed path.**  
+> **The default locale always occupies the URL root — never a prefixed path.**
 > This is enforced by `prefixDefaultLocale: false` in `astro.config.mjs` and
 > by `localePrefix()` in `src/i18n/utils.ts` returning `''` for
 > `SITE.defaultLocale`. It cannot be overridden per-page or per-route.
@@ -399,7 +401,7 @@ bun run pagefind       # Re-run Pagefind only (after astro build)
 > was missed before committing. Both must agree — `format:check` is what CI
 > enforces.
 
-> ⚠️ **Pagefind search does not work in `bun run dev`.**  
+> ⚠️ **Pagefind search does not work in `bun run dev`.**
 > Always run `bun run build` then `bun run preview` to test search.
 
 ---
