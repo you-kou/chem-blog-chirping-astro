@@ -6,7 +6,7 @@ updatedDate: 2026-04-30
 tags: [astro, tailwind, daisyui, theme, demarrage]
 categories: [Annonces]
 translationKey: welcome
-heroImage: ../../../assets/devices-mockup.png
+heroImage: ../../../assets/images/posts/welcome/devices-mockup.png
 heroImageAlt: 'Rendu adaptatif du thème Astro Chirping sur plusieurs appareils.'
 pinned: true
 toc: true

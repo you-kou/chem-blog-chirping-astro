@@ -64,7 +64,7 @@ Each OG image features:
 
 Here's the OG image that was automatically generated for **this very post**:
 
-![Auto-generated OG image for this post](../../../assets/images/og-sample.png)
+![Auto-generated OG image for this post](../../../assets/images/posts/automatic-og-images/og-sample.png)
 
 ## Enabling / disabling
 
@@ -87,7 +87,7 @@ When **disabled**:
 
 - No OG images are generated (the `/og/` route produces zero pages).
 - Posts without `heroImage` fall back to `SITE.defaultOgImage`
-  (typically `/images/og-default.svg`).
+  (typically via `SITE.defaultOgImage`).
 
 ## Customising the design
 
@@ -182,7 +182,7 @@ URL:
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 
-const avatar = readFileSync(join(process.cwd(), 'public/images/avatar.svg'));
+const avatar = readFileSync(join(process.cwd(), 'src/assets/images/site/avatar.svg'));
 const avatarDataUrl = `data:image/svg+xml;base64,${avatar.toString('base64')}`;
 ```
 
@@ -208,7 +208,7 @@ OG meta tag — the auto-generated image is not used:
 ```yaml
 ---
 title: My post with a custom OG
-heroImage: ../../../assets/images/my-custom-og.png
+heroImage: ../../../assets/images/posts/automatic-og-images/my-custom-og.png
 ---
 ```
 

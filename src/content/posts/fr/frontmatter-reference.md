@@ -64,13 +64,14 @@ Défaut `false`. Quand vrai, l'article est inclus en mode dev mais
 ### `heroImage` et `heroImageAlt`
 
 ```yaml
-heroImage: ../../../assets/coastline.jpg
+heroImage: ../../../assets/images/posts/featured-images-and-media/coastline.jpg
 heroImageAlt: 'Une longue exposition de vagues sur une côte rocheuse'
 ```
 
 Trois formes sont acceptées :
 
-- Un chemin **relatif au fichier markdown** vers `src/assets/` —
+- Un chemin **relatif au fichier markdown** vers
+  `src/assets/images/posts/<post-identifier>/` —
   résolu via le helper `image()` d'Astro, entièrement optimisé
   (WebP + `srcset` responsive). Recommandé.
 - Un chemin absolu sous `/public/...` — servi tel quel, sans
@@ -212,7 +213,7 @@ updatedDate: 2026-05-03
 tags: [exemple, reference]
 categories: [Référence]
 draft: false
-heroImage: ../../../assets/coastline.jpg
+heroImage: ../../../assets/images/posts/featured-images-and-media/coastline.jpg
 heroImageAlt: Une longue exposition d'une côte rocheuse
 showFeaturedImage: true
 canonicalURL: https://exemple.com/exemple/

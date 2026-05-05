@@ -64,14 +64,15 @@ sitemap and the RSS feed.
 ### `heroImage` and `heroImageAlt`
 
 ```yaml
-heroImage: ../../../assets/coastline.jpg
+heroImage: ../../../assets/images/posts/featured-images-and-media/coastline.jpg
 heroImageAlt: 'A long exposure of waves crashing on a rocky coastline'
 ```
 
 Three shapes are accepted:
 
 - A path **relative to the markdown file** pointing into
-  `src/assets/` — resolved through Astro's `image()` helper, fully
+  `src/assets/images/posts/<post-identifier>/` — resolved through Astro's
+  `image()` helper, fully
   optimized (WebP + responsive `srcset`). Recommended.
 - A `/public/...` absolute path — served as-is, no optimization.
 - An external `https://...` URL — optimized at build if the host is
@@ -206,7 +207,7 @@ updatedDate: 2026-05-03
 tags: [example, reference]
 categories: [Reference]
 draft: false
-heroImage: ../../../assets/coastline.jpg
+heroImage: ../../../assets/images/posts/featured-images-and-media/coastline.jpg
 heroImageAlt: A long exposure of a rocky coastline
 showFeaturedImage: true
 canonicalURL: https://example.com/example/

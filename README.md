@@ -8,7 +8,7 @@ It targets technical writers who want a fast, accessible, statically
 generated blog with first-class i18n, dark mode, and a modern
 authoring experience — without writing your own theme from scratch.
 
-![Chirping Astro device mockup](./src/assets/devices-mockup.png)
+![Chirping Astro device mockup](./src/assets/images/posts/welcome/devices-mockup.png)
 
 > **Live demo posts on this site walk through every feature in
 > detail.** Start with the hosted demo:
@@ -182,7 +182,7 @@ export const SITE: SiteConfig = {
     avatar: '/images/avatar.svg',
     bio: 'A one-line bio shown in the sidebar.',
   },
-  defaultOgImage: '/images/og-default.svg',
+  defaultOgImage: ogDefaultImg.src,
   defaultLocale: 'en',
   locales: ['en', 'fr'] as const,
   postsPerPage: 8,
@@ -982,7 +982,7 @@ Set `PUBLIC_GISCUS_ENABLED=false` in `.env`, or
 
 Set `SITE.autoOgImage = false` in `src/config.ts`. Posts without a
 `heroImage` will fall back to `SITE.defaultOgImage` (the static SVG
-in `public/images/`). See the demo post
+in `src/assets/images/site/`). See the demo post
 **/posts/automatic-og-images** for full customisation details.
 
 ### Change the keyboard shortcut for search
@@ -992,8 +992,8 @@ Edit the keydown handler at the bottom of
 
 ### Replace the avatar
 
-Drop a new file at `public/images/avatar.svg` (or change the path in
-`SITE.author.avatar`).
+Drop a new file at `src/assets/images/site/avatar.svg` (or change the import in
+`SITE.author.avatar` in `src/config.ts`).
 
 ### Control listing card height (fixed vs dynamic)
 

@@ -5,7 +5,7 @@ pubDate: 2026-04-20
 tags: [images, medias, hero, photographie, design]
 categories: [Rédaction]
 translationKey: featured-images-and-media
-heroImage: ../../../assets/coastline.jpg
+heroImage: ../../../assets/images/posts/featured-images-and-media/coastline.jpg
 heroImageAlt: 'Une longue exposition de vagues sur une côte rocheuse au crépuscule'
 showFeaturedImage: true
 toc: false
@@ -14,17 +14,18 @@ toc: false
 import Callout from '../../../components/Callout.astro';
 import VideoEmbed from '../../../components/VideoEmbed.astro';
 import { Image } from 'astro:assets';
-import img1 from '../../../assets/images/coastline-rocks.jpg';
-import img2 from '../../../assets/images/sunlight-ocean.jpg';
-import img3 from '../../../assets/images/sandy-beach.jpg';
-import img4 from '../../../assets/images/coastal-cliff.jpg';
+import img1 from '../../../assets/images/posts/featured-images-and-media/coastline-rocks.jpg';
+import img2 from '../../../assets/images/posts/featured-images-and-media/sunlight-ocean.jpg';
+import img3 from '../../../assets/images/posts/featured-images-and-media/sandy-beach.jpg';
+import img4 from '../../../assets/images/posts/featured-images-and-media/coastal-cliff.jpg';
 
 Cet article est un petit **essai photo** qui illustre les
 fonctionnalités d'image du thème de bout en bout. Notez ce que cette
 page fait que les autres ne font pas :
 
 - Le hero est un **asset local** situé dans
-  `src/assets/coastline.jpg`, passé par le pipeline d'image d'Astro
+  `src/assets/images/posts/featured-images-and-media/coastline.jpg`,
+  passé par le pipeline d'image d'Astro
   (`srcset` responsive, WebP).
 - `toc: false` — aucune table des matières à droite. Les essais photo
   se lisent mieux sans.
@@ -37,14 +38,14 @@ Vous avez trois options de stockage. Les images hero et les vignettes
 de carte passent par un petit composant `SmartImage` qui choisit
 automatiquement la bonne stratégie :
 
-### 1. Asset importé (`src/assets/`) — recommandé
+### 1. Asset importé (`src/assets/images/posts/<post-identifier>/`) — recommandé
 
-Déposez le fichier dans `src/assets/` et référencez-le depuis le
+Déposez le fichier dans `src/assets/images/posts/<post-identifier>/` et référencez-le depuis le
 frontmatter par un chemin **relatif au fichier markdown** :
 
 ```yaml
-# src/content/posts/fr/balade-cotiere.md → src/assets/coastline.jpg
-heroImage: ../../../assets/coastline.jpg
+# src/content/posts/fr/balade-cotiere.md → src/assets/images/posts/balade-cotiere/coastline.jpg
+heroImage: ../../../assets/images/posts/balade-cotiere/coastline.jpg
 heroImageAlt: Vagues sur une côte rocheuse en longue exposition
 ```
 
@@ -58,7 +59,7 @@ passer à `<Image>` pour un usage en ligne :
 
 ```mdx title="src/content/posts/fr/exemple.mdx"
 import { Image } from 'astro:assets';
-import coastline from '../../../assets/coastline.jpg';
+import coastline from '../../../assets/images/posts/featured-images-and-media/coastline.jpg';
 
 <Image src={coastline} alt="Une côte au crépuscule" widths={[400, 800, 1600]} />
 ```
@@ -85,7 +86,7 @@ qui télécharge la source au build, la convertit en WebP, et émet un
 `srcset` responsive :
 
 ```yaml
-heroImage: ../../../assets/images/light-through-window.png
+heroImage: ../../../assets/images/posts/typography-and-markdown/light-through-window.png
 heroImageAlt: Lumière douce du jour sur un bureau en bois
 ```
 
@@ -224,9 +225,11 @@ carte, donc un alt bien écrit sert les deux contextes.
   Préférez `<img loading="lazy">` (ou `<Image>` d'Astro) pour les
   images en bas de page.
 - Pour les images en ligne que vous contrôlez, utilisez `<Image>` de
-  `astro:assets` avec un fichier importé depuis `src/assets/...` afin
+  `astro:assets` avec un fichier importé depuis
+  `src/assets/images/posts/<post-identifier>/...` afin
   d'obtenir la même sortie multi-formats et responsive que le hero.
-- Pour les hero locaux, préférez `src/assets/` à `public/` quand
+- Pour les hero locaux, préférez
+  `src/assets/images/posts/<post-identifier>/` à `public/` quand
   c'est possible — seul le premier passe par l'optimiseur.
 
 <Callout type="info" title="Astuce">
